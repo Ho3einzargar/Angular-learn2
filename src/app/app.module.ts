@@ -1,7 +1,9 @@
+import { PostService } from './services/post.service';
 import { FormsModule } from '@angular/forms';
 import { PowerBoostCalculatorComponent } from './power-boost-calculator/power-boost-calculator.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,6 +11,10 @@ import { HeroBirthday2Component } from './hero-birthday2/hero-birthday2.componen
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 import { PowerBoosterComponent } from './power-booster/power-booster.component';
 import { FlyingHeroesComponent } from './flying-heroes/flying-heroes.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { SizerComponent } from './sizer/sizer.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +23,18 @@ import { FlyingHeroesComponent } from './flying-heroes/flying-heroes.component';
     PowerBoosterComponent,
     PowerBoostCalculatorComponent,
     FlyingHeroesComponent,
+    ItemListComponent,
+    ItemDetailComponent,
+    SizerComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     NoopAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
