@@ -15,6 +15,16 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { SizerComponent } from './sizer/sizer.component';
 import { CommonModule } from '@angular/common';
+import { UsersComponent } from './users/users.component';
+import { AdminsComponent } from './admins/admins.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes:Routes = [
+  { path: '' ,component:HomeComponent },
+  { path:'users',component:UsersComponent },
+  { path: 'admins',component:AdminsComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +36,17 @@ import { CommonModule } from '@angular/common';
     ItemListComponent,
     ItemDetailComponent,
     SizerComponent,
+    UsersComponent,
+    AdminsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     NoopAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
